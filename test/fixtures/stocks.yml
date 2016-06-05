@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recommend_date: 
+  stock_name: 
+  enter_date: 
+  enter_price: 
+  target_price: 
+  current_price: 
+  return_rate: 
+  return_ratio,: MyString
+  description: MyText
+
+two:
+  recommend_date: 
+  stock_name: 
+  enter_date: 
+  enter_price: 
+  target_price: 
+  current_price: 
+  return_rate: 
+  return_ratio,: MyString
+  description: MyText
