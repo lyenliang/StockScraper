@@ -7,7 +7,7 @@ class CreateStocks < ActiveRecord::Migration
       t.float :enter_price
       t.float :target_price
       t.float :current_price
-      t.float :return_rate
+      t.float :return
       t.string :return_ratio
       t.text :description
 

@@ -7,7 +7,7 @@ one:
   enter_price: 1.5
   target_price: 1.5
   current_price: 1.5
-  return_rate: 1.5
+  return: 1.5
   return_ratio: MyString
   description: MyText
 
@@ -18,6 +18,6 @@ two:
   enter_price: 1.5
   target_price: 1.5
   current_price: 1.5
-  return_rate: 1.5
+  return: 1.5
   return_ratio: MyString
   description: MyText
