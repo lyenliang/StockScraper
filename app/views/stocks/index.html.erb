@@ -42,7 +42,7 @@
                             <%= stock.current_price.to_f - stock.enter_price.to_f %>
                         </td>
                         <td>
-                            <%= (stock.current_price.to_f - stock.enter_price.to_f) / stock.enter_price.to_f %>
+                            <%= ((stock.current_price.to_f - stock.enter_price.to_f) / stock.enter_price.to_f).round(2) %>%
                         </td>
                         <td>
                             <%= stock.description %>

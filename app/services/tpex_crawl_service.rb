@@ -2,7 +2,7 @@ class TpexCrawlService
     
     require 'open-uri'
     # input: the stock numbers to be crawled
-    # output: [{stock_number1 => stock_price1}, {stock_number2 => stock_price2}, ...]
+    # output: {stock_number => stock_price}
     
     # called when new() is called
     def initialize(target_stocks)
@@ -10,7 +10,7 @@ class TpexCrawlService
     end
     
     def crawl_tpex
-        result = []
+        result = {}
         
         doc = Nokogiri::HTML(open("http://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_result.php?l=zh-tw"))
         text = doc.inner_text
@@ -24,8 +24,7 @@ class TpexCrawlService
             if @target_stocks.include?(stock_num)
                 puts "stock_num: #{stock_num}"
                 puts "stock_price: #{stock_price}"
-                number_price_pair = {stock_num => stock_price }
-                result << number_price_pair
+                result.merge!(stock_num => stock_price)
             end
         end
         return result
