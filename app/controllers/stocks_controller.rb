@@ -20,6 +20,10 @@ class StocksController < ApplicationController
         end
     end
     
+    def crawl
+        data = TpexCrawlService.new(['1234', '3662']).crawl_tpex
+    end
+    
     private
     
     def stock_params
