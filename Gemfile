@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'json'
+gem 'figaro'
 
-gem 'wombat'
+gem 'json'
 
 gem 'bootstrap-sass'
 
