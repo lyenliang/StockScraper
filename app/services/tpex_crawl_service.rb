@@ -1,4 +1,6 @@
 class TpexCrawlService
+    
+    require 'open-uri'
     # input: the stock numbers to be crawled
     # output: [{stock_number1 => stock_price1}, {stock_number2 => stock_price2}, ...]
     
@@ -10,7 +12,8 @@ class TpexCrawlService
     def crawl_tpex
         result = []
         
-        text = Nokogiri::HTML(open("http://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_result.php?l=zh-tw")).inner_text
+        doc = Nokogiri::HTML(open("http://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_result.php?l=zh-tw"))
+        text = doc.inner_text
         json = JSON.parse(text)
         stock_data = json['aaData']
         for i in 0..stock_data.size-1

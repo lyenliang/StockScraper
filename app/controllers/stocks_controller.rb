@@ -21,10 +21,17 @@ class StocksController < ApplicationController
     end
     
     def crawl
+
         data = TpexCrawlService.new(['1234', '3662']).crawl_tpex
+        
+        store_to_database(data)
     end
     
     private
+    
+    def store_to_database(data)
+        
+    end
     
     def stock_params
         params.require(:stock).permit(:recommend_date, :stock_number, 
