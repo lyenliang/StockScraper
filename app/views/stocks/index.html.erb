@@ -18,9 +18,37 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                </tr>
+                <% @stocks.each do |stock| %>
+                    <tr>
+                        <td>
+                            <%= stock.recommend_date %>
+                        </td>
+                        <td>
+                            <%= stock.stock_number %>_<%= stock.stock_name %> 
+                        </td>
+                        <td>
+                            <%= stock.enter_date %>
+                        </td>
+                        <td>
+                            <%= stock.enter_price %>
+                        </td>
+                        <td>
+                            <%= stock.target_price %>
+                        </td>
+                        <td>
+                            <%= stock.current_price %>
+                        </td>
+                        <td>
+                            <%= stock.current_price.to_f - stock.enter_price.to_f %>
+                        </td>
+                        <td>
+                            <%= (stock.current_price.to_f - stock.enter_price.to_f) / stock.enter_price.to_f %>
+                        </td>
+                        <td>
+                            <%= stock.description %>
+                        </td>
+                    </tr>
+                <% end %>
             </tbody>
         </table>
     </div>

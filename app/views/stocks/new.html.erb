@@ -1,9 +1,10 @@
 <h1 class="text-center">新增驗證股</h1>
 
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-12">
     <%= simple_form_for @stock do |f| %>
         <div class="form-group">
             <%= f.input :recommend_date,label: "推薦日期" %>
+            <%= f.input :stock_number, label: "股票代號" %>
             <%= f.input :stock_name, label: "股票名稱" %>
             <%= f.input :enter_date, label: "進場日期" %>
             <%= f.input :enter_price, label: "進場價位" %>
