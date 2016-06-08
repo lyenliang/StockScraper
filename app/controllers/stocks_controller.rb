@@ -21,7 +21,8 @@ class StocksController < ApplicationController
     end
     
     def crawl
-        data = CrawlStockDataService.new(['2412', '3662']).fetch_data
+        byebug
+        data = CrawlStockDataService.new(Stock.pluck(:stock_number)).fetch_data
         store_to_database(data)
         redirect_to stocks_path
     end
