@@ -21,7 +21,7 @@ class StocksController < ApplicationController
     end
     
     def crawl
-        data = TpexCrawlService.new(['1264', '3662']).crawl_tpex
+        data = CrawlStockDataService.new(['2412', '3662']).fetch_data
         store_to_database(data)
         redirect_to stocks_path
     end
