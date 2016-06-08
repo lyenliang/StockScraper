@@ -9,3 +9,5 @@ user = User.new
 user.email = ENV['admin_email']
 user.password = ENV['admin_password']
 user.password_confirmation = ENV['admin_password']
+user.is_admin = true
+user.save
