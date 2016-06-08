@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607145959) do
+ActiveRecord::Schema.define(version: 20160608094359) do
 
   create_table "stocks", force: :cascade do |t|
     t.string   "recommend_date"
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20160607145959) do
     t.float    "enter_price"
     t.float    "target_price"
     t.float    "current_price"
-    t.float    "return"
-    t.string   "return_ratio"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
