@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'whenever'
+
 
 gem 'figaro'
 
@@ -52,6 +52,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'whenever'
   
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
