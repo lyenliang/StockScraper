@@ -20,6 +20,14 @@ class StocksController < ApplicationController
         end
     end
     
+    def destroy
+        @stock = Stock.find(params[:id])
+        
+        @stock.destroy
+        
+        redirect_to stocks_path
+    end
+    
     def crawl
         CrawlStockDataService.new.start_carwling
         redirect_to stocks_path

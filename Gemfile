@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'font-awesome-rails'
 
 gem 'figaro'
 
@@ -9,8 +9,6 @@ gem 'json'
 gem 'bootstrap-sass'
 
 gem 'nokogiri'
-
-gem 'bootstrap-sass'
 
 gem "devise", "~> 4.0.0 "
 
@@ -52,6 +50,7 @@ group :development, :test do
 end
 
 group :development do
+  
   gem 'whenever'
   
   # Use sqlite3 as the database for Active Record

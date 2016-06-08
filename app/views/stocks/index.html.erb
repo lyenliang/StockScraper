@@ -15,6 +15,9 @@
                     <th>損益</th>
                     <th>報酬率</th>
                     <th>附加說明</th>
+                    <% if current_user.present? && current_user.admin? %>
+                        <td>操作</td>
+                    <% end %>
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +50,13 @@
                         <td>
                             <%= stock.description %>
                         </td>
+                        <% if current_user.present? && current_user.admin? %>
+                            <td>
+                                <%= link_to stock_path(stock), method: :delete do %>
+                                    <i class="fa fa-trash"></i>
+                                <% end %>
+                            </td>
+                    <% end %>
                     </tr>
                 <% end %>
             </tbody>
