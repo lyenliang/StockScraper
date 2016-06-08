@@ -5,9 +5,16 @@ class CrawlStockDataService
     # output: {stock_number => stock_price}
     
     # called when new() is called
-    def initialize(target_stocks)
-        @target_stocks = target_stocks
+    def initialize
+        @target_stocks = Stock.pluck(:stock_number)
     end
+    
+    def start_carwling
+        data = fetch_data
+        store_to_database(data)
+    end
+    
+    private 
     
     def fetch_data
         result = {}
@@ -16,8 +23,6 @@ class CrawlStockDataService
         result.merge!(over_the_counter)
         result.merge!(stock_exchange)
     end
-    
-    private 
     
     def get_date(line)
         return line[5, 5]
@@ -70,5 +75,11 @@ class CrawlStockDataService
             end
         end
         return result
+    end
+    
+    def store_to_database(data)
+        data.each do |stock_number, stock_price|
+            Stock.where(stock_number: stock_number).update_all(current_price: stock_price)
+        end
     end
 end

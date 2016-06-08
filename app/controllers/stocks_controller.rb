@@ -21,19 +21,11 @@ class StocksController < ApplicationController
     end
     
     def crawl
-        byebug
-        data = CrawlStockDataService.new(Stock.pluck(:stock_number)).fetch_data
-        store_to_database(data)
+        CrawlStockDataService.new.start_carwling
         redirect_to stocks_path
     end
     
     private
-    
-    def store_to_database(data)
-        data.each do |stock_number, stock_price|
-            Stock.where(stock_number: stock_number).update_all(current_price: stock_price)
-        end
-    end
     
     def stock_params
         params.require(:stock).permit(:recommend_date, :stock_number, 
