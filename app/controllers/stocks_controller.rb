@@ -3,7 +3,7 @@ class StocksController < ApplicationController
     before_action :authenticate_user!, only: [:new, :index]
     
     def index
-        @stocks = Stock.all
+        @stocks = Stock.all.order("stock_number")
         @return_diff = 0
     end
     
