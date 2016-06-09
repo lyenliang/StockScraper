@@ -4,6 +4,7 @@ class StocksController < ApplicationController
     
     def index
         @stocks = Stock.all
+        @return_diff = 0
     end
     
     def new
