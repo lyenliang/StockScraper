@@ -26,7 +26,7 @@
                             <%= stock.recommend_date %>
                         </td>
                         <td>
-                            <%= stock.stock_number %>_<%= stock.stock_name %> 
+                            <%= link_to("#{stock.stock_number}_#{stock.stock_name}", "https://tw.stock.yahoo.com/q/bc?s=#{stock.stock_number}" ) %>
                         </td>
                         <td>
                             <%= stock.enter_price %>
@@ -63,6 +63,7 @@
                                 <%= link_to stock_path(stock), method: :delete do %>
                                     <i class="fa fa-trash"></i>
                                 <% end %>
+                                <%= link_to("Edit", edit_stock_path(stock), class: "btn btn-sm btn-default") %>
                             </td>
                     <% end %>
                     </tr>

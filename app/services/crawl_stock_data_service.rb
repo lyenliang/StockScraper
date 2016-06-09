@@ -37,6 +37,7 @@ class CrawlStockDataService
         text = doc.inner_text
         json = JSON.parse(text)
         stock_data = json['aaData']
+        return stock_data
     end
     
     #上市
@@ -44,13 +45,14 @@ class CrawlStockDataService
         result = {}
         today = Time.now.strftime("%m/%d")
         @target_stocks.each do |stock|
+            
             text = Nokogiri::HTML(open("http://www.twse.com.tw/ch/trading/exchange/STOCK_DAY/STOCK_DAY_print.php?genpage=genpage/Report#{Time.now.strftime("%Y%m")}/201606_F3_1_8_#{stock}.php&type=csv")).inner_text
             if text == ""
                 next
             end
             lines = text.split(/\r?\n/)
             lines.each do |line|
-                if get_date(line) == today
+                if get_date(line) == '06/08'
                     result.merge!(stock => get_stock_price(line))
                 end
             end

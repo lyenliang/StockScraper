@@ -1,6 +1,6 @@
-<h1 class="text-center">新增驗證股</h1>
-
-<div class="col-md-12">
+<div class="col-md-4 col-md-offset-4">
+    <h1>修改推薦股</h1>
+    <hr>
     <%= simple_form_for @stock do |f| %>
         <div class="form-group">
             <%= f.input :stock_name, label: "股票名稱" %>
@@ -9,7 +9,7 @@
             <%= f.input :enter_price, label: "進場價位" %>
             <%= f.input :target_price, label: "目標價位" %>
             <%= f.input :description, label: "附加說明" %>
-            <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
         </div>
+        <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."} %>
     <% end %>
 </div>

@@ -7,6 +7,20 @@ class StocksController < ApplicationController
         @return_diff = 0
     end
     
+    def edit
+        @stock = Stock.find(params[:id])
+    end
+    
+    def update
+        @stock = Stock.find(params[:id])
+        
+        if @stock.update(stock_params)
+            redirect_to stocks_path
+        else
+            render :edit
+        end
+    end
+    
     def new
         @stock = Stock.new
     end
@@ -38,7 +52,7 @@ class StocksController < ApplicationController
     
     def stock_params
         params.require(:stock).permit(:recommend_date, :stock_number, 
-            :stock_name, :enter_date, :enter_price, :target_price, 
-            :current_price, :return, :return_ratio, :description)
+            :stock_name, :enter_price, :target_price, 
+            :current_price, :description)
     end
 end

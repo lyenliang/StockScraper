@@ -4,6 +4,6 @@ module StocksHelper
     end
     
     def render_return_diff(current_price, enter_price)
-        return (current_price - enter_price)
+        return (current_price - enter_price).round(2)
     end
 end
