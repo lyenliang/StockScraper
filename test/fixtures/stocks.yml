@@ -1,20 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  recommend_date: MyString
+  recommend_date: 2016-06-09
   stock_number: MyString
   stock_name: MyString
-  enter_date: MyString
   enter_price: 1.5
   target_price: 1.5
   current_price: 1.5
   description: MyText
 
 two:
-  recommend_date: MyString
+  recommend_date: 2016-06-09
   stock_number: MyString
   stock_name: MyString
-  enter_date: MyString
   enter_price: 1.5
   target_price: 1.5
   current_price: 1.5

@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608094359) do
+ActiveRecord::Schema.define(version: 20160609023736) do
 
   create_table "stocks", force: :cascade do |t|
-    t.string   "recommend_date"
+    t.date     "recommend_date"
     t.string   "stock_number"
     t.string   "stock_name"
-    t.string   "enter_date"
     t.float    "enter_price"
     t.float    "target_price"
     t.float    "current_price"
