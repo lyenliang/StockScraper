@@ -30,6 +30,7 @@
 @import "base/metismenu";
 @import "base/spinners";
 
+
 // Landing page
 @import "base/landing";
 
@@ -50,5 +51,6 @@
 // Your custom style to override base style
 @import "base/custom";
 
-
-
+body {
+    background-color: #FFE;
+}
