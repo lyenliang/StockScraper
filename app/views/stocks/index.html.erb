@@ -38,34 +38,10 @@
                             <%= stock.current_price %>
                         </td>
                         <td>
-                            <% @return_diff = render_return_diff(stock.current_price.to_f, stock.enter_price.to_f) %>
-                                <% if @return_diff > 0 %>
-                                    <font color="red">
-                                        <%= @return_diff %>
-                                    </font>
-                                <% else if @return_diff < 0%>
-                                    <font color="green">
-                                        <%= @return_diff %>
-                                    </font>
-                                <% else %>
-                                    <%= @return_diff %>
-                                <% end %>
-                            <% end %>
+                            <%= render_return_diff(stock.current_price.to_f, stock.enter_price.to_f) %>
                         </td>
                         <td>
-                            <% @return_ratio = render_return_ratio(stock.current_price.to_f, stock.enter_price.to_f) %>
-                                <% if @return_ratio > 0 %>
-                                    <font color="red">
-                                        <%= @return_ratio %>%
-                                    </font>
-                                <% else if @return_ratio < 0%>
-                                    <font color="green">
-                                        <%= @return_ratio %>%
-                                    </font>
-                                <% else %>
-                                    <%= @return_ratio %>%
-                                <% end %>
-                            <% end %>
+                            <%= render_return_ratio(stock.current_price.to_f, stock.enter_price.to_f) %>
                         </td>
                         <td>
                             <%= stock.description %>
