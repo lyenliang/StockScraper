@@ -9,7 +9,7 @@ class CrawlStockDataService
         @target_stocks = Stock.pluck(:stock_number)
     end
     
-    def start_carwling
+    def start_crawling
         data = fetch_data
         store_to_database(data)
     end

@@ -44,7 +44,7 @@ class StocksController < ApplicationController
     end
     
     def crawl
-        CrawlStockDataService.new.start_carwling
+        CrawlStockDataService.new.start_crawling
         redirect_to stocks_path
     end
     
